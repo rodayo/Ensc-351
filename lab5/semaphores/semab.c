@@ -28,7 +28,7 @@ int main(void)
 
 	printf("semB opened! \n");
 	fflush(stdout);
-	shmem = shm_open("shared_memory", OFLAGS, MFLAGS);
+	shmem = shm_open("shared_memory", OFLAGS, 0777);
 	
 	if (shmem == -1)
 	{

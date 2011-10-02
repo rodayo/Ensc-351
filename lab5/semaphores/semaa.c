@@ -39,7 +39,7 @@ int main( )
 	printf("Result of unlinking: %d \n", unlink);
 	
 	//Create shared memory object
-	shmem = shm_open("shared_memory", OFLAGS, MFLAGS);
+	shmem = shm_open("shared_memory", OFLAGS, 0777);
 	if (shmem == -1)
 	{
 		printf("shared_memory failed to open...\n");

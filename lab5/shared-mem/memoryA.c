@@ -39,7 +39,7 @@ int main(void)
 	// in this case all can access.
 	
 	printf("Opening 'mem_test' object...\n");
-	mem = shm_open("mem_test", OFLAGS, MFLAGS);
+	mem = shm_open("mem_test", OFLAGS, 0777);
 	
 	// if not -1 then successful
 	if(mem != -1)
@@ -77,7 +77,7 @@ int main(void)
 		
 		//close file descriptor and unlink
 		close(mem);
-		shm_unlink("mem_test");
+	//	shm_unlink("mem_test");
 	}
 	else
 	{

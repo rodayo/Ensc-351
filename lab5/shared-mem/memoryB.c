@@ -24,14 +24,14 @@ int main(void)
 	char *where;
 	//open the memory area
 	printf("Opening 'mem_test' object...\n");
-	mem = shm_open("mem_test", O_CREAT|O_RDWR, 0777);
+	mem = shm_open("mem_test", O_RDWR, 0777);
 	
 	//if not -1 then successful
 	if(mem != -1)
 	{
 		//maping area into own address space.
 		//3rd - Protection, 4th - arguments
-		where= mmap(0, SIZE, PROT, MFLAGS, mem, 0);
+		where = mmap(0, SIZE, PROT, MFLAGS, mem, 0);
 		if(where != (void*)-1)
 		{
 			//print out contents of memory area
